@@ -66,7 +66,7 @@ export default {
                 this.currentImage = this.aboutPokemon.front
             }
         }
-    } 
+    }, 
 }
 </script>
 
