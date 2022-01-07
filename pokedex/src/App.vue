@@ -1,14 +1,47 @@
 <template>
   <div id="app">
-    <div class="column is-half is-offset-one-quarter">
-      <div class="is-flex is-flex-direction-row">
-        <input class="input is-rounded" type="text" placeholder="Busque seu pokemon" v-model="busca">
-        <div class="separar"></div>
-        <button class="button is-success is-rounded" @click="clickSearch">Buscar</button>
+    <div class="hero is-info is-large">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-end">
+                <input class="input is-rounded descer" type="text" placeholder="Busque seu pokemon" v-model="busca">
+                <div class="separar"></div>
+                <button class="button is-success is-rounded descer" @click="clickSearch">Buscar</button>
+                <span class="navbar-item">
+                  <a class="button is-info is-inverted">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Download</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-      <p v-for="(poke,index) in filteredArray" :key="poke.url">
-        <pokemon :pokemon="poke" :num="index + 1"/>
-      </p>
+      <div class="box has-background-success">
+        <h1 class="title is-2 has-text-white">Pokemons</h1>
+      </div>
+      <div class="column is-half is-offset-one-quarter">
+        <div class="is-flex is-flex-direction-row">
+        </div>
+        <p v-for="(poke,index) in filteredArray" :key="poke.url">
+          <pokemon :pokemon="poke" :num="index + 1"/>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -65,9 +98,16 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    margin-top: 0px;
   }
   .separar{
     margin-left: 1%;
+  }
+  .descer{
+    margin-top: 2%;
+  }
+  .box{
+    width : 100%;
+    margin-top: 3%;
   }
 </style>
